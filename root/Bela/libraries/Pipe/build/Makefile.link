@@ -1,0 +1,9 @@
+#This file is generated automatically by detectlibraries.sh. DO NOT EDIT
+LIBRARY := Pipe
+THIS_CPPFILES := $(wildcard libraries/$(LIBRARY)/*.cpp)
+THIS_CFILES := $(wildcard libraries/$(LIBRARY)/*.c)
+LIBRARIES_OBJS := $(LIBRARIES_OBJS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.o) $(THIS_CFILES:.c=.o)))
+ALL_DEPS := $(ALL_DEPS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.d)))
+libraries/Pipe/build/Pipe.o: libraries/Pipe/Pipe.cpp
+LIBRARIES_LDLIBS += -lcobalt -lmodechk
+LIBRARIES_LDFLAGS += -Wl,--no-as-needed -L/usr/xenomai/lib

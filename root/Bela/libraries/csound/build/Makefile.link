@@ -1,0 +1,8 @@
+#This file is generated automatically by detectlibraries.sh. DO NOT EDIT
+LIBRARY := csound
+THIS_CPPFILES := $(wildcard libraries/$(LIBRARY)/*.cpp)
+THIS_CFILES := $(wildcard libraries/$(LIBRARY)/*.c)
+LIBRARIES_OBJS := $(LIBRARIES_OBJS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.o) $(THIS_CFILES:.c=.o)))
+ALL_DEPS := $(ALL_DEPS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.d)))
+LIBRARIES_LDLIBS += -lcsound
+LIBRARIES_LDFLAGS += 

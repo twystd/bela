@@ -1,0 +1,9 @@
+#This file is generated automatically by detectlibraries.sh. DO NOT EDIT
+LIBRARY := Eeprom
+THIS_CPPFILES := $(wildcard libraries/$(LIBRARY)/*.cpp)
+THIS_CFILES := $(wildcard libraries/$(LIBRARY)/*.c)
+LIBRARIES_OBJS := $(LIBRARIES_OBJS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.o) $(THIS_CFILES:.c=.o)))
+ALL_DEPS := $(ALL_DEPS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.d)))
+libraries/Eeprom/build/Eeprom.o: libraries/Eeprom/Eeprom.cpp
+LIBRARIES_LDLIBS += 
+LIBRARIES_LDFLAGS += 

@@ -1,0 +1,10 @@
+#This file is generated automatically by detectlibraries.sh. DO NOT EDIT
+LIBRARY := Midi
+THIS_CPPFILES := $(wildcard libraries/$(LIBRARY)/*.cpp)
+THIS_CFILES := $(wildcard libraries/$(LIBRARY)/*.c)
+LIBRARIES_OBJS := $(LIBRARIES_OBJS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.o) $(THIS_CFILES:.c=.o)))
+ALL_DEPS := $(ALL_DEPS) $(addprefix libraries/$(LIBRARY)/build/,$(notdir $(THIS_CPPFILES:.cpp=.d)))
+libraries/Midi/build/Midi_c.o: libraries/Midi/Midi_c.cpp
+libraries/Midi/build/Midi.o: libraries/Midi/Midi.cpp
+LIBRARIES_LDLIBS += -lasound
+LIBRARIES_LDFLAGS += 
